@@ -36,7 +36,7 @@ export default function Home() {
 function ImageCard({ src }: { src: any }) {
   return (
     <div className="h-full w-full bg-dsBrown relative">
-      <div className="absolute w-full h-full z-10 bg-gradient-to-b from-[#e7730070] to-[#81400090]"></div>
+      <div className="absolute w-full h-full z-10 bg-gradient-to-b from-[#e7730070] to-[#81400090] hover:from-[#e7730020] hover:to-[#81400030]"></div>
       <Image
         src={src}
         alt="Dread"
