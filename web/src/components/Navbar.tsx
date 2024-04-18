@@ -4,6 +4,7 @@ import Link from "next/link";
 import LogoImage from "@/public/images/dreadskill-logo.png";
 import Image from "next/image";
 import { FaBars } from "react-icons/fa";
+import clsx from "clsx";
 
 interface Link {
   page: string;
@@ -14,7 +15,13 @@ export function Navbar() {
   const [active, setActive] = useState(false);
 
   return (
-    <header className="flex flex-col p-4 md:py-6 md:px-10 lg:flex-row lg:justify-between">
+    <header
+      className={clsx(
+        "flex flex-col p-4",
+        "md:py-6 md:px-10",
+        "lg:flex-row lg:justify-between"
+      )}
+    >
       <div className="flex justify-between items-center lg:justify-start">
         <div className="flex items-center gap-4">
           <Image
@@ -67,13 +74,20 @@ function Links({ active, mobile }: { active?: boolean; mobile?: boolean }) {
   ];
   return (
     <nav
-      className={`flex flex-col items-end lg:items-center gap-4 lg:gap-4 xl:gap-8 lg:flex-row  
-        ${mobile ? (active ? "flex" : "hidden") : "flex"}
-      `}
+      className={clsx(
+        "flex flex-col items-end gap-4",
+        "lg:flex-row lg:items-center lg:gap-4",
+        "xl:gap-8",
+        mobile ? (active ? "flex" : "hidden") : "flex"
+      )}
     >
       {links.map((link) => (
         <Link
-          className="uppercase decoration-2 underline-offset-4 font-bold hover:underline hover:decoration-orange-500"
+          className={clsx(
+            "font-bold",
+            "uppercase underline-offset-4 decoration-2",
+            "hover:underline hover:decoration-orange-500"
+          )}
           key={link.href}
           href={link.href}
         >
