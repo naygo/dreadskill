@@ -14,16 +14,18 @@ export function Navbar() {
   const [active, setActive] = useState(false);
 
   return (
-    <header className="flex flex-col gap-4 py-8 md:p-8 lg:flex-row lg:justify-between">
-      <div className="flex justify-center items-center gap-4 lg:justify-start">
-        <Image
-          src={LogoImage}
-          alt="Logo DreadSkill"
-          className="w-12 h-12 md:w-24 md:h-24"
-        />
-        <h1 className="text-4xl font-bold">
-          DREAD<span className="text-dsOrange">SKILL</span>
-        </h1>
+    <header className="flex flex-col p-4 md:py-6 md:px-10 lg:flex-row lg:justify-between">
+      <div className="flex justify-between items-center lg:justify-start">
+        <div className="flex items-center gap-4">
+          <Image
+            src={LogoImage}
+            alt="Logo DreadSkill"
+            className="w-12 h-12 md:w-24 md:h-24"
+          />
+          <h1 className="text-4xl font-bold">
+            DREAD<span className="text-dsOrange">SKILL</span>
+          </h1>
+        </div>
 
         <FaBars
           className="lg:hidden cursor-pointer"
@@ -31,9 +33,8 @@ export function Navbar() {
         />
       </div>
 
-      <div className="md:flex lg:hidden justify-center">
-        <Links mobile active={active} />
-      </div>
+      <Links mobile active={active} />
+
       <div className="hidden lg:flex">
         <Links />
       </div>
@@ -66,13 +67,13 @@ function Links({ active, mobile }: { active?: boolean; mobile?: boolean }) {
   ];
   return (
     <nav
-      className={`flex flex-col items-center gap-8 lg:flex-row 
+      className={`flex flex-col items-end lg:items-center gap-4 lg:gap-4 xl:gap-8 lg:flex-row  
         ${mobile ? (active ? "flex" : "hidden") : "flex"}
       `}
     >
       {links.map((link) => (
         <Link
-          className="text-sm uppercase decoration-2 underline-offset-4 font-bold hover:underline hover:decoration-orange-500 lg:text-base"
+          className="uppercase decoration-2 underline-offset-4 font-bold hover:underline hover:decoration-orange-500"
           key={link.href}
           href={link.href}
         >
