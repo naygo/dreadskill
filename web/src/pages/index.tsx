@@ -11,6 +11,10 @@ import Person2 from "@/public/images/person2.jpg";
 import Person3 from "@/public/images/person3.jpg";
 import Person4 from "@/public/images/person4.jpg";
 import Divisor from "@/public/images/divisor.svg";
+import DreadP from "@/public/images/dreadP.jpeg";
+import DreadM from "@/public/images/dreadM.jpeg";
+import DreadG from "@/public/images/dreadG.jpeg";
+
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const sectionStyle = "px-4 lg:px-10 md:py-10";
@@ -40,63 +44,79 @@ export default function Home() {
         <ImageCard src={Person4} />
       </section>
 
-      <main className="container mx-auto flex flex-col gap-5 mt-5">
-        <Image src={Divisor} alt="Divisor" className="mx-auto px-4 lg:px-10 xl:px-0" />
+      <Image
+        src={Divisor}
+        alt="Divisor"
+        className="mx-auto px-4 lg:px-10 xl:px-0 my-10"
+      />
 
-        <section id="sobre" className={clsx(sectionStyle, "flex flex-col")}>
-          <div className="flex flex-col md:flex-row gap-5 md:gap-10">
-            <div className="hidden md:block">
+      <main className="container mx-auto flex flex-col gap-10 md:gap-0">
+        <section
+          id="sobre"
+          className={clsx(
+            sectionStyle,
+            "flex flex-col md:flex-row gap-5 md:gap-10"
+          )}
+        >
+          <div className="hidden md:block">
+            <Image
+              src={LogoWithLetters}
+              alt="DreadSkill"
+              className="lg:w-12/12 xl:w-11/12"
+            />
+          </div>
+
+          <div className="flex flex-col gap-4 md:gap-5">
+            <h1>Conheça nosso trabalho</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
+              eros fringilla, sodales ipsum et, posuere felis. Quisque elit
+              felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum
+              lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc,
+              imperdiet in elit a, luctus aliquet risus. Duis quis tellus ex. Ut
+              pulvinar ipsum non elementum cursus.
+            </p>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
+              eros fringilla, sodales ipsum et, posuere felis. Quisque elit
+              felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum
+              lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc,
+              imperdiet in elit a, luctus aliquet risus. Duis quis tellus ex. Ut
+              pulvinar ipsum non elementum. Qualquer dúvida, entre em contato
+              conosco pelo WhatsApp ou pelo Instagram.
+            </p>
+
+            <div className="flex gap-4">
               <Image
                 src={LogoWithLetters}
                 alt="DreadSkill"
-                className="lg:w-12/12 xl:w-11/12"
+                className="w-5/12 md:hidden"
               />
-            </div>
-
-            <div className="flex flex-col gap-4 md:gap-5">
-              <h1>Conheça nosso trabalho</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                id eros fringilla, sodales ipsum et, posuere felis. Quisque elit
-                felis, tincidunt a ex mattis, ultricies cursus lectus. Donec
-                ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu
-                nunc, imperdiet in elit a, luctus aliquet risus. Duis quis
-                tellus ex. Ut pulvinar ipsum non elementum cursus.
-              </p>
-
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                id eros fringilla, sodales ipsum et, posuere felis. Quisque elit
-                felis, tincidunt a ex mattis, ultricies cursus lectus. Donec
-                ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu
-                nunc, imperdiet in elit a, luctus aliquet risus. Duis quis
-                tellus ex. Ut pulvinar ipsum non elementum. Qualquer dúvida,
-                entre em contato conosco pelo WhatsApp ou pelo Instagram.
-              </p>
-
-              <div className="flex gap-4">
-                <Image
-                  src={LogoWithLetters}
-                  alt="DreadSkill"
-                  className="w-5/12 md:hidden"
-                />
-                <div className="flex flex-col gap-4">
-                  <p className="text-xs md:text-base">
-                    Nos siga no Instagram, acompanhe nosso trabalho e fique por
-                    dentro das novidades!
-                  </p>
-                  <div className="flex gap-2">
-                    <FaInstagram className={socialButton} />
-                    <FaWhatsapp className={socialButton} />
-                  </div>
+              <div className="flex flex-col gap-4">
+                <p className="text-xs md:text-base">
+                  Nos siga no Instagram, acompanhe nosso trabalho e fique por
+                  dentro das novidades!
+                </p>
+                <div className="flex gap-2">
+                  <FaInstagram className={socialButton} />
+                  <FaWhatsapp className={socialButton} />
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="servicos-oferecidos" className={clsx(sectionStyle, "")}>
+        <section
+          id="servicos-oferecidos"
+          className={clsx(sectionStyle, "flex flex-col gap-5 md:gap-10")}
+        >
           <h1>Serviços oferecidos</h1>
+          <div className="flex flex-col gap-5 justify-center w-full h-full md:flex-row">
+            <ServicesCard src={DreadP} dreadSize="P" />
+            <ServicesCard src={DreadM} dreadSize="M" />
+            <ServicesCard src={DreadG} dreadSize="G" />
+          </div>
         </section>
       </main>
 
@@ -121,6 +141,45 @@ function ImageCard({ src }: { src: any }) {
         layout="fill"
         objectFit="cover"
         objectPosition="center"
+      />
+    </div>
+  );
+}
+
+function ServicesCard({
+  src,
+  dreadSize,
+}: {
+  src: any;
+  dreadSize: "P" | "M" | "G";
+}) {
+  return (
+    <div className="shrink shadow-brown rounded relative">
+      <div
+        className={clsx(
+          "w-12 h-12 rounded-full bg-dsBrown",
+          "md:w-14 md:h-14",
+          "flex items-center justify-center",
+          "absolute right-[-15px] top-[-10px]"
+        )}
+      >
+        <div
+          className={clsx(
+            "w-10 h-10 rounded-full bg-transparent",
+            "md:w-12 md:h-12",
+            "border-2 border-neutral-100",
+            "absolute"
+          )}
+        ></div>
+        <h2 className="text-2xl md:text-4xl text-neutral-100 tracking-tighter">
+          {dreadSize}
+        </h2>
+      </div>
+      <Image
+        src={src}
+        alt="Modelo de Dread"
+        objectPosition="start"
+        className="w-full h-40 md:h-auto object-cover object-top rounded"
       />
     </div>
   );
