@@ -14,12 +14,7 @@ html {
 }
 
 body {
-  @apply font-barlow bg-neutral-100 text-sm text-dsBrown;
-
-  background-size: 36px 36px;
-  background-image: radial-gradient(#e7730050 0.9px, transparent 0.9px),
-    radial-gradient(#e7730050 0.9px, #f5f5f5 0.9px);
-  background-position: 0 0, 18px 18px;
+  @apply font-barlow text-sm text-dsBrown bg-neutral-100;
 }
 
 p {
@@ -37,4 +32,11 @@ h6 {
 
 button {
   @apply font-bold uppercase tracking-widest text-sm;
+}
+
+.dot-background {
+  background-size: 36px 36px;
+  background-image: radial-gradient(#fff7 0.9px, transparent 0.9px),
+    radial-gradient(#fff7 0.9px, transparent 0.9px);
+  background-position: 0 0, 18px 18px;
 }

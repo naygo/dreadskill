@@ -17,6 +17,7 @@ import DreadG from "@/public/images/dreadG.jpeg";
 
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import { WaveBottom, WaveTop } from "@/components/Waves";
 
 const sectionStyle = "px-4 lg:px-10 md:py-10";
 const socialButton =
@@ -34,7 +35,7 @@ export default function Home() {
 
       <section
         className={clsx(
-          "flex flex-col p-4 pt-0 gap-2 mb-10",
+          "flex flex-col p-4 pt-0 gap-2",
           "lg:flex-row lg:px-10",
           "h-[calc(100vh-80px)] md:h-[calc(100vh-136px)]"
         )}
@@ -45,58 +46,68 @@ export default function Home() {
         <ImageCard src={Person4} />
       </section>
 
-      <Divisor />
-
-      <main className="container mx-auto flex flex-col gap-10 md:gap-0">
+      <main className="mx-auto flex flex-col gap-10 md:gap-0 md:mt-12">
         <section
           className={clsx(
             sectionStyle,
-            "flex flex-col md:flex-row gap-5 md:gap-10"
+            "relative bg-neutral-300 dot-background"
           )}
         >
-          <div className="hidden md:block">
-            <Image
-              src={LogoWithLetters}
-              alt="DreadSkill"
-              className="lg:w-12/12 xl:w-11/12"
-            />
-          </div>
+          <div className="absolute dot-background"></div>
+          <WaveTop />
+          <WaveBottom />
 
-          <div className="flex flex-col gap-4 md:gap-5">
-            <h1>Conheça nosso trabalho</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
-              eros fringilla, sodales ipsum et, posuere felis. Quisque elit
-              felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum
-              lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc,
-              imperdiet in elit a, luctus aliquet risus. Duis quis tellus ex. Ut
-              pulvinar ipsum non elementum cursus.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
-              eros fringilla, sodales ipsum et, posuere felis. Quisque elit
-              felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum
-              lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc,
-              imperdiet in elit a, luctus aliquet risus. Duis quis tellus ex. Ut
-              pulvinar ipsum non elementum. Qualquer dúvida, entre em contato
-              conosco pelo WhatsApp ou pelo Instagram.
-            </p>
-
-            <div className="flex gap-4">
+          <div
+            className={clsx(
+              "container mx-auto flex shrink gap-10",
+              "pb-12 pt-16",
+              "lg:pt-44 lg:pb-36"
+            )}
+          >
+            <div className="hidden md:block bg-neutral-100 rounded-full p-2 h-fit">
               <Image
                 src={LogoWithLetters}
                 alt="DreadSkill"
-                className="w-5/12 md:hidden"
+                className="lg:w-12/12 xl:w-11/12 mx-auto"
               />
-              <div className="flex flex-col gap-4">
-                <p className="text-xs md:text-base">
-                  Nos siga no Instagram, acompanhe nosso trabalho e fique por
-                  dentro das novidades!
-                </p>
-                <div className="flex gap-2">
-                  <FaInstagram className={socialButton} />
-                  <FaWhatsapp className={socialButton} />
+            </div>
+
+            <div className="flex flex-col gap-4 md:gap-5">
+              <h1>Conheça nosso trabalho</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                id eros fringilla, sodales ipsum et, posuere felis. Quisque elit
+                felis, tincidunt a ex mattis, ultricies cursus lectus. Donec
+                ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu
+                nunc, imperdiet in elit a, luctus aliquet risus. Duis quis
+                tellus ex. Ut pulvinar ipsum non elementum cursus.
+              </p>
+
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                id eros fringilla, sodales ipsum et, posuere felis. Quisque elit
+                felis, tincidunt a ex mattis, ultricies cursus lectus. Donec
+                ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu
+                nunc, imperdiet in elit a, luctus aliquet risus. Duis quis
+                tellus ex. Ut pulvinar ipsum non elementum. Qualquer dúvida,
+                entre em contato conosco pelo WhatsApp ou pelo Instagram.
+              </p>
+
+              <div className="flex gap-4">
+                <Image
+                  src={LogoWithLetters}
+                  alt="DreadSkill"
+                  className="w-5/12 md:hidden bg-neutral-100 rounded-full p-2"
+                />
+                <div className="flex flex-col gap-4">
+                  <p className="text-xs md:text-base">
+                    Nos siga no Instagram, acompanhe nosso trabalho e fique por
+                    dentro das novidades!
+                  </p>
+                  <div className="flex gap-2">
+                    <FaInstagram className={socialButton} />
+                    <FaWhatsapp className={socialButton} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -105,9 +116,18 @@ export default function Home() {
 
         <section
           id="servicos"
-          className={clsx(sectionStyle, "flex flex-col gap-5 md:gap-10")}
+          className={clsx(
+            sectionStyle,
+            "container mx-auto flex flex-col gap-5 md:gap-10"
+          )}
         >
-          <h1>Serviços oferecidos</h1>
+          <div className="flex flex-col md:flex-row justify-between md:items-center gap-5">
+            <h1>Serviços oferecidos</h1>
+            <div className="bg-dsOrange flex items-center justify-center py-2 px-4 rounded relative w-fit">
+              <div className="absolute bg-transparent border-2 border-neutral-100 w-[95%] h-5/6 rounded"></div>
+              <h2 className="text-xs md:text-sm lg:text-base text-white">Também cortamos cabelo!</h2>
+            </div>
+          </div>
           <div className="flex flex-col gap-5 md:gap-14 justify-center w-full h-full md:flex-row">
             <ServicesCard src={DreadP} dreadSize="P" />
             <ServicesCard src={DreadM} dreadSize="M" />

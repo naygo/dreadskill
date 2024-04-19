@@ -46,7 +46,7 @@ export default function Document() {
         {/* Language */}
         <meta name="language" content="pt-BR" />
       </Head>
-      <body className="bg-neutral-50">
+      <body>
         <NextScript />
         <Main />
       </body>
