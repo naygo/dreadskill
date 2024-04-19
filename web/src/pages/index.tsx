@@ -10,9 +10,10 @@ import Person1 from "@/public/images/person1.jpg";
 import Person2 from "@/public/images/person2.jpg";
 import Person3 from "@/public/images/person3.jpg";
 import Person4 from "@/public/images/person4.jpg";
+import Divisor from "@/public/images/divisor.svg";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 
-const sectionStyle = "px-4 md:py-20";
+const sectionStyle = "px-4 lg:px-10 md:py-10";
 const socialButton =
   "cursor-pointer text-4xl bg-dsOrange hover:bg-dsOrangeDark p-1.5 rounded-full fill-white";
 
@@ -39,17 +40,16 @@ export default function Home() {
         <ImageCard src={Person4} />
       </section>
 
-      <main className="container mx-auto flex flex-col gap-10">
-        <section
-          id="sobre"
-          className={clsx(sectionStyle, "flex flex-col gap-24")}
-        >
+      <main className="container mx-auto flex flex-col gap-5 mt-5">
+        <Image src={Divisor} alt="Divisor" className="mx-auto px-4 lg:px-10 xl:px-0" />
+
+        <section id="sobre" className={clsx(sectionStyle, "flex flex-col")}>
           <div className="flex flex-col md:flex-row gap-5 md:gap-10">
-            <div>
+            <div className="hidden md:block">
               <Image
                 src={LogoWithLetters}
                 alt="DreadSkill"
-                className="hidden md:block lg:w-12/12 xl:w-11/12"
+                className="lg:w-12/12 xl:w-11/12"
               />
             </div>
 
