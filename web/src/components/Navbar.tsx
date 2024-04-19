@@ -25,7 +25,7 @@ export function Navbar() {
       )}
     >
       <div className="flex justify-between items-center lg:justify-start">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 cursor-pointer">
           <Image
             src={LogoImage}
             alt="Logo DreadSkill"
@@ -56,6 +56,10 @@ function Links({ active, mobile }: { active?: boolean; mobile?: boolean }) {
     {
       page: "sobre",
       href: "#sobre",
+    },
+    {
+      page: "serviços",
+      href: "#servicos",
     },
     {
       page: "depoimentos",

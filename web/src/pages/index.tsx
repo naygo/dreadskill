@@ -10,12 +10,13 @@ import Person1 from "@/public/images/person1.jpg";
 import Person2 from "@/public/images/person2.jpg";
 import Person3 from "@/public/images/person3.jpg";
 import Person4 from "@/public/images/person4.jpg";
-import Divisor from "@/public/images/divisor.svg";
+import DivisorImage from "@/public/images/divisor.svg";
 import DreadP from "@/public/images/dreadP.jpeg";
 import DreadM from "@/public/images/dreadM.jpeg";
 import DreadG from "@/public/images/dreadG.jpeg";
 
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const sectionStyle = "px-4 lg:px-10 md:py-10";
 const socialButton =
@@ -43,12 +44,8 @@ export default function Home() {
         <ImageCard src={Person3} />
         <ImageCard src={Person4} />
       </section>
-      <Image
-        id="sobre"
-        src={Divisor}
-        alt="Divisor"
-        className="mx-auto px-4 lg:px-10 xl:px-0 my-10"
-      />
+
+      <Divisor />
 
       <main className="container mx-auto flex flex-col gap-10 md:gap-0">
         <section
@@ -107,7 +104,7 @@ export default function Home() {
         </section>
 
         <section
-          id="servicos-oferecidos"
+          id="servicos"
           className={clsx(sectionStyle, "flex flex-col gap-5 md:gap-10")}
         >
           <h1>Serviços oferecidos</h1>
@@ -117,10 +114,28 @@ export default function Home() {
             <ServicesCard src={DreadG} dreadSize="G" />
           </div>
         </section>
+
+        <Divisor />
+
+        <section id="depoimentos" className={clsx(sectionStyle, "")}>
+          <h1>Depoimentos</h1>
+        </section>
       </main>
 
+      <ScrollToTopButton />
       <footer className="h-24 p-10 text-center">copyright dreadskill c</footer>
     </>
+  );
+}
+
+function Divisor() {
+  return (
+    <Image
+      id="sobre"
+      src={DivisorImage}
+      alt="Divisor"
+      className="mx-auto px-4 lg:px-10 xl:px-0 my-10"
+    />
   );
 }
 
