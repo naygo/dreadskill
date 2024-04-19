@@ -179,7 +179,7 @@ function ServicesCard({
         src={src}
         alt="Modelo de Dread"
         objectPosition="start"
-        className="w-full h-40 md:h-auto object-cover object-top rounded"
+        className="w-full h-auto object-cover object-top rounded"
       />
     </div>
   );
