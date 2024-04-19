@@ -16,6 +16,9 @@ const config: Config = {
       dsOrange: '#E77300',
       dsOrangeDark: '#D26A00',
       dsBrown: '#6B2400'
+    },
+    boxShadow: {
+      'brown': '5px 5px #6B2400',
     }
    }
   },
