@@ -13,13 +13,17 @@ body {
   @apply font-barlow bg-neutral-100 text-sm text-dsBrown;
 }
 
+p {
+  @apply lg:text-base
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  @apply text-4xl font-sugo tracking-widest;
+  @apply text-4xl font-sugo font-bold uppercase tracking-widest;
 }
 
 button {
