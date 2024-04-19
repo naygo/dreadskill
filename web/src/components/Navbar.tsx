@@ -1,10 +1,12 @@
-import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+import { useState } from "react";
+import { FaBars } from "react-icons/fa";
+
+import clsx from "clsx";
 
 import LogoImage from "@/public/images/dreadskill-logo.png";
-import Image from "next/image";
-import { FaBars } from "react-icons/fa";
-import clsx from "clsx";
 
 interface Link {
   page: string;
