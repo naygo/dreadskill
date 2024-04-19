@@ -19,7 +19,11 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { WaveBottom, WaveTop } from "@/components/Waves";
 
-const sectionStyle = "px-4 lg:px-10 md:py-10";
+const sectionWaveSyle =
+  "relative bg-neutral-300 dot-background px-4 lg:px-10 md:py-10";
+const sectionWaveContainerStyle = "container mx-auto flex gap-10";
+
+const sectionStyle = "px-4 md:py-5 lg:p-10";
 const sectionContainerStyle = "container mx-auto flex flex-col gap-5 md:gap-10";
 const socialButton =
   "cursor-pointer text-4xl bg-dsOrange hover:bg-dsOrangeDark p-1.5 rounded-full fill-white";
@@ -47,20 +51,14 @@ export default function Home() {
         <ImageCard src={Person4} />
       </section>
 
-      <main className="mx-auto flex flex-col gap-10 md:gap-0 md:mt-12">
-        <section
-          className={clsx(
-            sectionStyle,
-            "relative bg-neutral-300 dot-background"
-          )}
-        >
-          <div className="absolute dot-background"></div>
+      <main className="flex flex-col gap-10 md:gap-0 md:mt-12">
+        <section className={clsx(sectionWaveSyle)}>
           <WaveTop />
           <WaveBottom />
 
           <div
             className={clsx(
-              "container mx-auto flex shrink gap-10",
+              sectionWaveContainerStyle,
               "pb-12 pt-16",
               "lg:pt-44 lg:pb-36"
             )}
@@ -135,27 +133,33 @@ export default function Home() {
           </div>
         </section>
 
-        <Divisor />
+        <section id="depoimentos" className={clsx(sectionWaveSyle)}>
+          <div
+            className={clsx(
+              sectionWaveContainerStyle,
+              "flex-col",
+              "pb-20 pt-16",
+              "lg:pt-36 lg:pb-44"
+            )}
+          >
+            <WaveTop />
+            <WaveBottom />
+            <h1>Depoimentos</h1>
 
-        <section
-          id="depoimentos"
-          className={clsx(sectionStyle, sectionContainerStyle)}
-        >
-          <h1>Depoimentos</h1>
-
-          <div className="grid gap-10 md:gap-16 lg:gap-x-8 lg:gap-y-16 lg:grid-cols-2">
-            <DepoimentsCard
-              src={Person1}
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus."
-            />
-            <DepoimentsCard
-              src={Person2}
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus."
-            />
-            <DepoimentsCard
-              src={Person3}
-              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus."
-            />
+            <div className="grid gap-10 md:gap-16 lg:gap-x-8 lg:gap-y-16 lg:grid-cols-2">
+              <DepoimentsCard
+                src={Person1}
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus."
+              />
+              <DepoimentsCard
+                src={Person2}
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus."
+              />
+              <DepoimentsCard
+                src={Person3}
+                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus."
+              />
+            </div>
           </div>
         </section>
       </main>
@@ -163,17 +167,6 @@ export default function Home() {
       <ScrollToTopButton />
       <footer className="h-24 p-10 text-center">copyright dreadskill c</footer>
     </>
-  );
-}
-
-function Divisor() {
-  return (
-    <Image
-      id="sobre"
-      src={DivisorImage}
-      alt="Divisor"
-      className="mx-auto px-4 lg:px-10 xl:px-0"
-    />
   );
 }
 
