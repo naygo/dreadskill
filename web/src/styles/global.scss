@@ -9,6 +9,10 @@
   }
 }
 
+html {
+  @apply scroll-smooth;
+}
+
 body {
   @apply font-barlow bg-neutral-100 text-sm text-dsBrown;
 
