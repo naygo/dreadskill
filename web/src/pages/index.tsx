@@ -172,7 +172,7 @@ function Divisor() {
       id="sobre"
       src={DivisorImage}
       alt="Divisor"
-      className="mx-auto px-4 lg:px-10 xl:px-0 my-10"
+      className="mx-auto px-4 lg:px-10 xl:px-0"
     />
   );
 }
