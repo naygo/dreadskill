@@ -33,7 +33,7 @@ export default function Home() {
 
       <section
         className={clsx(
-          "flex flex-col p-4 pt-0 gap-2",
+          "flex flex-col p-4 pt-0 gap-2 mb-10",
           "lg:flex-row lg:px-10",
           "h-[calc(100vh-80px)] md:h-[calc(100vh-136px)]"
         )}
@@ -43,8 +43,8 @@ export default function Home() {
         <ImageCard src={Person3} />
         <ImageCard src={Person4} />
       </section>
-
       <Image
+        id="sobre"
         src={Divisor}
         alt="Divisor"
         className="mx-auto px-4 lg:px-10 xl:px-0 my-10"
@@ -52,7 +52,6 @@ export default function Home() {
 
       <main className="container mx-auto flex flex-col gap-10 md:gap-0">
         <section
-          id="sobre"
           className={clsx(
             sectionStyle,
             "flex flex-col md:flex-row gap-5 md:gap-10"
