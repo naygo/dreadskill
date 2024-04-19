@@ -112,7 +112,7 @@ export default function Home() {
           className={clsx(sectionStyle, "flex flex-col gap-5 md:gap-10")}
         >
           <h1>Serviços oferecidos</h1>
-          <div className="flex flex-col gap-5 justify-center w-full h-full md:flex-row">
+          <div className="flex flex-col gap-5 md:gap-14 justify-center w-full h-full md:flex-row">
             <ServicesCard src={DreadP} dreadSize="P" />
             <ServicesCard src={DreadM} dreadSize="M" />
             <ServicesCard src={DreadG} dreadSize="G" />
@@ -154,11 +154,11 @@ function ServicesCard({
   dreadSize: "P" | "M" | "G";
 }) {
   return (
-    <div className="shrink shadow-brown rounded relative">
+    <div className="shrink shadow-brown rounded relative w-11/12 md:w-full">
       <div
         className={clsx(
           "w-12 h-12 rounded-full bg-dsBrown",
-          "md:w-14 md:h-14",
+          "lg:w-14 lg:h-14",
           "flex items-center justify-center",
           "absolute right-[-15px] top-[-10px]"
         )}
@@ -166,12 +166,12 @@ function ServicesCard({
         <div
           className={clsx(
             "w-10 h-10 rounded-full bg-transparent",
-            "md:w-12 md:h-12",
+            "lg:w-12 lg:h-12",
             "border-2 border-neutral-100",
             "absolute"
           )}
         ></div>
-        <h2 className="text-2xl md:text-4xl text-neutral-100 tracking-tighter">
+        <h2 className="text-2xl lg:text-4xl text-neutral-100 tracking-tighter">
           {dreadSize}
         </h2>
       </div>
@@ -179,7 +179,7 @@ function ServicesCard({
         src={src}
         alt="Modelo de Dread"
         objectPosition="start"
-        className="w-full h-auto object-cover object-top rounded"
+        className="w-full h-full object-cover object-top rounded"
       />
     </div>
   );
