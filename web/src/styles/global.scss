@@ -11,10 +11,15 @@
 
 body {
   @apply font-barlow bg-neutral-100 text-sm text-dsBrown;
+
+  background-size: 36px 36px;
+  background-image: radial-gradient(#e7730050 0.9px, transparent 0.9px),
+    radial-gradient(#e7730050 0.9px, #f5f5f5 0.9px);
+  background-position: 0 0, 18px 18px;
 }
 
 p {
-  @apply lg:text-base
+  @apply lg:text-base;
 }
 
 h1,
