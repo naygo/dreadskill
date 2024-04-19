@@ -20,6 +20,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { WaveBottom, WaveTop } from "@/components/Waves";
 
 const sectionStyle = "px-4 lg:px-10 md:py-10";
+const sectionContainerStyle = "container mx-auto flex flex-col gap-5 md:gap-10";
 const socialButton =
   "cursor-pointer text-4xl bg-dsOrange hover:bg-dsOrangeDark p-1.5 rounded-full fill-white";
 
@@ -116,16 +117,15 @@ export default function Home() {
 
         <section
           id="servicos"
-          className={clsx(
-            sectionStyle,
-            "container mx-auto flex flex-col gap-5 md:gap-10"
-          )}
+          className={clsx(sectionStyle, sectionContainerStyle)}
         >
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-5">
             <h1>Serviços oferecidos</h1>
             <div className="bg-dsOrange flex items-center justify-center py-2 px-4 rounded relative w-fit">
               <div className="absolute bg-transparent border-2 border-neutral-100 w-[95%] h-5/6 rounded"></div>
-              <h2 className="text-xs md:text-sm lg:text-base text-white">Também cortamos cabelo!</h2>
+              <h2 className="text-xs md:text-sm lg:text-base text-white">
+                Também cortamos cabelo!
+              </h2>
             </div>
           </div>
           <div className="flex flex-col gap-5 md:gap-14 justify-center w-full h-full md:flex-row">
@@ -137,8 +137,26 @@ export default function Home() {
 
         <Divisor />
 
-        <section id="depoimentos" className={clsx(sectionStyle, "")}>
+        <section
+          id="depoimentos"
+          className={clsx(sectionStyle, sectionContainerStyle)}
+        >
           <h1>Depoimentos</h1>
+
+          <div className="grid gap-10 md:gap-16 lg:gap-x-8 lg:gap-y-16 lg:grid-cols-2">
+            <DepoimentsCard
+              src={Person1}
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus."
+            />
+            <DepoimentsCard
+              src={Person2}
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus."
+            />
+            <DepoimentsCard
+              src={Person3}
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis, tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem, pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet in elit a, luctus aliquet risus."
+            />
+          </div>
         </section>
       </main>
 
@@ -215,6 +233,36 @@ function ServicesCard({
         objectPosition="start"
         className="w-full h-full object-cover object-top rounded"
       />
+    </div>
+  );
+}
+
+function DepoimentsCard({ src, text }: { src: any; text: string }) {
+  return (
+    <div
+      className={clsx(
+        "flex flex-col items-center",
+        "md:flex-row md:relative",
+        text.length > 310 && "lg:col-span-2 "
+      )}
+    >
+      <Image
+        src={src}
+        alt="Depoimento"
+        className={clsx(
+          "w-60 h-60 object-cover rounded-full z-10",
+          "md:absolute md:-top-4 left-0"
+        )}
+      />
+      <div
+        className={clsx(
+          "bg-neutral-100 rounded border-2 border-dsBrown shadow-brown",
+          "relative flex min-h-48",
+          "-mt-10 md:m-0 md:ml-20"
+        )}
+      >
+        <p className="p-4 pt-10 md:pl-44 md:p-4">{text}</p>
+      </div>
     </div>
   );
 }
