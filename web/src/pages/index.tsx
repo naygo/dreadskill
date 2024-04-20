@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import clsx from "clsx";
 
@@ -19,14 +19,31 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { WaveBottom, WaveTop } from "@/components/Waves";
 
+interface Team {
+  name: string;
+  description: string;
+}
+
 const sectionWaveSyle =
   "relative bg-neutral-300 dot-background px-4 lg:px-10 md:py-10";
 const sectionWaveContainerStyle = "container mx-auto flex gap-10";
-
-const sectionStyle = "px-4 md:py-5 lg:p-10";
-const sectionContainerStyle = "container mx-auto flex flex-col gap-5 md:gap-10";
+const sectionStyle =
+  "container mx-auto flex flex-col gap-5 md:gap-10 px-4 md:py-5 lg:p-10";
 const socialButton =
   "cursor-pointer text-4xl bg-dsOrange hover:bg-dsOrangeDark p-1.5 rounded-full fill-white";
+
+const team: Team[] = [
+  {
+    name: "Bruno José",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis.",
+  },
+  {
+    name: "Primo do Bruno",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id eros fringilla, sodales ipsum et, posuere felis.",
+  },
+];
 
 export default function Home() {
   return (
@@ -52,7 +69,7 @@ export default function Home() {
       </section>
 
       <main className="flex flex-col gap-10 md:gap-0 md:mt-12">
-        <section className={clsx(sectionWaveSyle)}>
+        <section className={sectionWaveSyle}>
           <WaveTop />
           <WaveBottom />
 
@@ -113,14 +130,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          id="servicos"
-          className={clsx(sectionStyle, sectionContainerStyle)}
-        >
+        <section id="servicos" className={sectionStyle}>
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-5">
             <h1>Serviços oferecidos</h1>
             <div className="bg-dsOrange flex items-center justify-center py-2 px-4 rounded relative w-fit">
-              <div className="absolute bg-transparent border-2 border-neutral-100 w-[95%] h-5/6 rounded"></div>
+              <div className="absolute bg-transparent border-2 border-neutral-100 w-[96%] h-[78%] rounded"></div>
               <h2 className="text-xs md:text-sm lg:text-base text-white">
                 Também cortamos cabelo!
               </h2>
@@ -133,7 +147,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="depoimentos" className={clsx(sectionWaveSyle)}>
+        <section id="depoimentos" className={sectionWaveSyle}>
           <div
             className={clsx(
               sectionWaveContainerStyle,
@@ -162,6 +176,20 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section id="equipe" className={sectionStyle}>
+          <h1>Conheça nossa equipe</h1>
+          <div className="flex flex-col justify-center gap-5 md:flex-row md:gap-24">
+            {team.map((person) => (
+              <TeamCard
+                key={person.name}
+                name={person.name}
+                descripton={person.description}
+                src={Person1}
+              />
+            ))}
+          </div>
+        </section>
       </main>
 
       <ScrollToTopButton />
@@ -170,7 +198,7 @@ export default function Home() {
   );
 }
 
-function ImageCard({ src }: { src: any }) {
+function ImageCard({ src }: { src: StaticImageData }) {
   return (
     <div className="h-full w-full bg-dsBrown relative">
       <div
@@ -230,7 +258,8 @@ function ServicesCard({
   );
 }
 
-function DepoimentsCard({ src, text }: { src: any; text: string }) {
+const cardStyle = "bg-neutral-100 rounded border-2 border-dsBrown shadow-brown";
+function DepoimentsCard({ src, text }: { src: StaticImageData; text: string }) {
   return (
     <div
       className={clsx(
@@ -249,12 +278,32 @@ function DepoimentsCard({ src, text }: { src: any; text: string }) {
       />
       <div
         className={clsx(
-          "bg-neutral-100 rounded border-2 border-dsBrown shadow-brown",
+          cardStyle,
           "relative flex min-h-48",
           "-mt-10 md:m-0 md:ml-20"
         )}
       >
         <p className="p-4 pt-10 md:pl-44 md:p-4">{text}</p>
+      </div>
+    </div>
+  );
+}
+
+function TeamCard({
+  name,
+  descripton,
+  src,
+}: {
+  name: string;
+  descripton: string;
+  src: any;
+}) {
+  return (
+    <div className={clsx(cardStyle,'flex flex-col items-center p-4 max-w-96')}>
+      <Image src={src} alt={name} className="w-52 h-52 object-cover rounded-full" />
+      <div className="text-center mt-4">
+        <h2 className="text-dsOrange mb-2">{name}</h2>
+        <p>{descripton}</p>
       </div>
     </div>
   );
