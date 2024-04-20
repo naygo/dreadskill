@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Button from "@/components/Button";
+import Footer from "@/components/Footer";
 
 import {
   AboutSection,
@@ -43,7 +44,7 @@ export default function Home() {
       </main>
 
       <ScrollToTopButton />
-      <footer className="h-24 p-10 text-center">copyright dreadskill c</footer>
+      <Footer />
     </>
   );
 }
