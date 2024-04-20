@@ -8,7 +8,7 @@ import { FaArrowUp } from "react-icons/fa";
 const isBrowser = () => typeof window !== "undefined"; //The approach recommended by Next.js
 
 export const ScrollToTopContainerVariants: Variants = {
-  hide: { opacity: 0, y: 40  },
+  hide: { opacity: 0, y: 40 },
   show: { opacity: 1, y: 0 },
 };
 
@@ -35,7 +35,7 @@ export default function ScrollToTopButton() {
     <motion.button
       className={clsx(
         "fixed bottom-0 right-0",
-        "text-xs p-2 m-2 bg-dsOrange rounded-full",
+        "text-xs p-2 m-2 bg-dsOrange hover:bg-dsOrangeDark rounded-full",
         "xl:text-xl xl:m-10"
       )}
       variants={ScrollToTopContainerVariants}
@@ -43,7 +43,7 @@ export default function ScrollToTopButton() {
       animate={controls}
       onClick={scrollToTop}
     >
-      <FaArrowUp />
+      <FaArrowUp className="text-neutral-50" />
     </motion.button>
   );
 }
