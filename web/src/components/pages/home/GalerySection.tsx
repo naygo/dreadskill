@@ -32,7 +32,7 @@ export function GalerySection() {
 function NavigationButtons({ direction }: { direction: "left" | "right" }) {
   const Icon = direction === "left" ? FaChevronLeft : FaChevronRight;
   return (
-    <div className="bg-neutral-100 hover:bg-neutral-300 cursor-pointer p-2 rounded-full h-fit">
+    <div className="hidden md:block bg-neutral-100 hover:bg-neutral-300 cursor-pointer p-2 rounded-full h-fit">
       <Icon className="hidden text-dsBrown md:block text-2xl" />
     </div>
   );
