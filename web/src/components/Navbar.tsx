@@ -7,13 +7,14 @@ import { FaBars } from "react-icons/fa";
 import clsx from "clsx";
 
 import LogoImage from "@/public/images/dreadskill-logo.png";
+import Button from "./Button";
 
 interface Link {
   page: string;
   href: string;
 }
 
-export function Navbar() {
+export default function Navbar() {
   const [active, setActive] = useState(false);
 
   return (
@@ -101,9 +102,7 @@ function Links({ active, mobile }: { active?: boolean; mobile?: boolean }) {
         </Link>
       ))}
 
-      <button className="text-white cursor-pointer border-0 rounded bg-dsOrange hover:bg-dsOrangeDark px-4 py-2">
-        Agendar
-      </button>
+      <Button label="Agendar" />
     </nav>
   );
 }
