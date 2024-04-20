@@ -21,7 +21,7 @@ function ButtonGenerate(
       disabled={disabled}
       {...props}
       className={clsx(
-        "bg-dsOrange hover:bg-dsOrangeDark py-2 px-4 rounded text-white",
+        "text-xs md:text-sm lg:text-base bg-dsOrange hover:bg-dsOrangeDark py-2 px-4 rounded text-white",
         props.className
       )}
     >
