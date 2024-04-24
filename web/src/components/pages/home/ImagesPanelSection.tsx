@@ -6,16 +6,13 @@ import Person2 from "@/public/images/person2.jpg";
 import Person3 from "@/public/images/person3.jpg";
 import Person4 from "@/public/images/person4.jpg";
 
-const navbarMobileHeight = "80px";
-const navbarDesktop = "136px";
-
 export function ImagesPanelSection() {
   return (
     <section
       className={clsx(
         "flex flex-col p-4 pt-0 gap-2",
         "lg:flex-row lg:px-10",
-        `h-[calc(100vh-${navbarMobileHeight})] md:h-[calc(100vh-${navbarDesktop})]`
+        `h-[calc(100vh-80px)] md:h-[calc(100vh-136px)]`
       )}
     >
       <ImageCard src={Person1} />
@@ -39,9 +36,8 @@ function ImageCard({ src }: { src: StaticImageData }) {
       <Image
         src={src}
         alt="Dread"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
+        fill
+        className="object-cover object-center"
       />
     </div>
   );

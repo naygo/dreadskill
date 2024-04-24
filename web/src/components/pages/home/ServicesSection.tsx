@@ -60,7 +60,6 @@ function ServicesCard({
       <Image
         src={src}
         alt="Modelo de Dread"
-        objectPosition="start"
         className="w-full h-full object-cover object-top rounded"
       />
     </div>
