@@ -27,7 +27,7 @@ export function StudioSection() {
         </div>
       </div>
 
-      <Image src={Map} alt="Localização estúdio DreadSkill" />
+      <Image src={Map} alt="Localização estúdio DreadSkill" className="w-full" />
     </section>
   );
 }

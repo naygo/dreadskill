@@ -54,7 +54,7 @@ function TeamCard({
     <div
       className={clsx(
         homePageStyles.card,
-        "flex flex-col items-center p-4 max-w-96"
+        "flex flex-col items-center p-4"
       )}
     >
       <Image
