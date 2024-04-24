@@ -24,32 +24,28 @@ export function AboutSection() {
         )}
       >
         <div className="hidden md:block bg-neutral-100 rounded-full p-2 h-fit">
-          <Image
-            src={LogoWithLetters}
-            alt="DreadSkill"
-            className="lg:w-12/12 xl:w-11/12 mx-auto"
-          />
+          <Image src={LogoWithLetters} alt="DreadSkill" className="mx-auto" />
         </div>
 
-        <div className="flex flex-col gap-4 md:gap-5">
-          <h1>Conheça nosso trabalho</h1>
+        <div className="flex flex-col gap-4 md:gap-5 md:max-w-sm lg:max-w-lg xl:max-w-5xl">
+          <h1>Sobre nós</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
-            eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis,
-            tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem,
-            pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet
-            in elit a, luctus aliquet risus. Duis quis tellus ex. Ut pulvinar
-            ipsum non elementum cursus.
+            A DreadSkill é uma empresa de cabeleireiro especializada em dreads,
+            fundada por Bruno José em 6 de agosto de 2019. Iniciamos nossos
+            serviços atendendo em domicílios e ao longo do tempo, nossa empresa
+            evoluiu, passando de um atendimento móvel para um espaço
+            profissional, impulsionada pela crescente demanda e pelo compromisso
+            com a qualidade.
           </p>
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id
-            eros fringilla, sodales ipsum et, posuere felis. Quisque elit felis,
-            tincidunt a ex mattis, ultricies cursus lectus. Donec ipsum lorem,
-            pretium et consequat id, auctor in arcu. Morbi arcu nunc, imperdiet
-            in elit a, luctus aliquet risus. Duis quis tellus ex. Ut pulvinar
-            ipsum non elementum. Qualquer dúvida, entre em contato conosco pelo
-            WhatsApp ou pelo Instagram.
+            Nosso foco atual está em expandir a cultura dos dreads em Belo
+            Horizonte e continuar inovando em nosso trabalho. Com uma equipe
+            talentosa e apaixonada pelo que faz, a DreadSkill busca se destacar
+            não apenas pela qualidade de seus serviços, mas também por oferecer
+            uma abordagem única e personalizada a cada cliente. Estamos
+            comprometidos em disseminar a cultura dos dreads em BH e oferecer um
+            trabalho de excelência.
           </p>
 
           <div className="flex gap-4">
